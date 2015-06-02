@@ -5,10 +5,10 @@ feature 'public accesses a working bike' do
     bike = station.release_bike
     expect(bike).to be_working
   end
-  
-  scenario 'docking station does not release bikes when none are available' do
+
+  scenario 'docking stations cannot release bikes when none are available' do
     station = DockingStation.new
-    expect{ station.release_bike }.to raise_error 'No bikes available'
+    expect { station.release_bike }.to raise_error 'No bikes available'
   end
 
 end
